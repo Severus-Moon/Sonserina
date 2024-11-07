@@ -14,15 +14,28 @@ async function quantidadeUsuariosPorRede() {
             y: quantidadeDeUsuarios, 
             type: 'bar',
             marker: {
-                color: getCSS 
+                color: getCSS ('--primary-color')
             }
         }   
     ]
 
+    const layout = {
+        plot_bgcolor: getCSS ('--bg-color'),
+        paper_bgcolor: getCSS ('--bg-color'),
+        title: {
+            text: 'Redes sociais com mais usuários no mundo',
+            x: 0,
+            font: {
+                color: getCSS ('--primary-color'),
+                family: getCSS ('--font'),
+            }
+        }
+    }
+
     const grafico = document.createElement('div')
     grafico.className = 'grafico'
     document.getElementById('graficos-container').appendChild(grafico)
-    Plotly.newPlot(grafico, data)
+    Plotly.newPlot(grafico, data, layout ) 
 }
 
 quantidadeUsuariosPorRede()
