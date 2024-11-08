@@ -1,4 +1,4 @@
-import { getCSS } from "./common.js"
+import { getCSS, tickConfig } from "./common.js"
 
 
 async function quantidadeUsuariosPorRede() {
@@ -29,7 +29,27 @@ async function quantidadeUsuariosPorRede() {
                 color: getCSS ('--primary-color'),
                 family: getCSS ('--font'),
             }
-        }
+        },
+        xaxis: {  
+        
+            tickfont: {
+                color: getCSS ('--primary-color'),
+                size: 16,
+                family: getCSS ('--font')
+
+            },             
+            title: {
+                    text: 'nome das redes sociais',
+                    font: {
+                        color: getCSS ('--secondary-color')
+                    }
+                 }
+          },
+          yaxis: {
+                 title: {
+                    text: 'bilhões de usuários ativos',
+                 }
+          }
     }
 
     const grafico = document.createElement('div')
